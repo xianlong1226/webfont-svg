@@ -1,0 +1,38 @@
+{
+  "name": "webfont-svg",
+  "version": "1.0.0",
+  "description": "generate webfont from svg",
+  "main": "app.js",
+  "dependencies": {
+    "async-throttle": "^1.1.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cosmiconfig": "^2.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "globby": "^6.0.0",
+    "meow": "^3.3.0",
+    "merge-deep": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.9.0",
+    "nunjucks": "^3.0.0",
+    "resolve-from": "^3.0.0",
+    "serve-favicon": "^2.4.5",
+    "svg2ttf": "^4.0.0",
+    "svgicons2svgfont": "git+https://github.com/xianlong1226/svgicons2svgfont.git#develop",
+    "ttf2eot": "^2.0.0",
+    "ttf2woff": "^2.0.0",
+    "ttf2woff2": "^2.0.0",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "webfont",
+    "svg"
+  ],
+  "author": "xianlong.zeng",
+  "license": "ISC"
+}

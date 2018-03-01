@@ -1,0 +1,84 @@
+@font-face {
+    font-family: my-font-name;
+    src: url("./my-font-name.eot");
+    src: url("./my-font-name.eot?#iefix") format("embedded-opentype"), url("./my-font-name.woff2") format("woff2"), url("./my-font-name.woff") format("woff"), url("./my-font-name.ttf") format("truetype"), url("./my-font-name.svg#my-font-name") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+
+.my-font-name {
+    display: inline-block;
+    transform: translate(0, 0);
+    text-rendering: auto;
+    font: normal normal 400 14px/1 my-font-name;
+    font-size: inherit;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.my-font-name-lg {
+    vertical-align: -15%;
+    line-height: 0.75em;
+    font-size: 1.33333333em;
+}
+
+.my-font-name-2x {
+    font-size: 2em;
+}
+
+.my-font-name-3x {
+    font-size: 3em;
+}
+
+.my-font-name-4x {
+    font-size: 4em;
+}
+
+.my-font-name-5x {
+    font-size: 5em;
+}
+
+.my-font-name-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.my-font-name-0::before {
+    content: "\ea01";
+}
+
+.my-font-name-1::before {
+    content: "\ea04";
+}
+
+.my-font-name-2::before {
+    content: "\ea02";
+}
+
+.my-font-name-3::before {
+    content: "\ea09";
+}
+
+.my-font-name-4::before {
+    content: "\ea0f";
+}
+
+.my-font-name-5::before {
+    content: "\ea0a";
+}
+
+.my-font-name-6::before {
+    content: "\ea06";
+}
+
+.my-font-name-7::before {
+    content: "\ea03";
+}
+
+.my-font-name-8::before {
+    content: "\ea05";
+}
+
+.my-font-name-9::before {
+    content: "\ea0b";
+}
