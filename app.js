@@ -36,17 +36,20 @@ const webfont = require('./webfont/dist/index.js').default
 	app.use('/fonts',express.static(__dirname + '/static/fonts'));
 
 	var unicodeArray = [
-		{a: '&#xEA0F;', b: 0xEA0F}, 
-	{a: '&#xEA0A;', b: 0xEA0A},
-	{a: '&#xEA01;', b: 0xEA01},
-	{a: '&#xEA04;', b: 0xEA04},
-	{a: '&#xEA09;', b: 0xEA09},
-	{a: '&#xEA06;', b: 0xEA06},
-	{a: '&#xEA0B;', b: 0xEA0B},
-	{a: '&#xEA02;', b: 0xEA02},
-	{a: '&#xEA05;', b: 0xEA05},
-	{a: '&#xEA03;', b: 0xEA03},
+		{a: '&#x0030;', b: 0x0030}, 
+	{a: '&#x0031;', b: 0x0031},
+	{a: '&#x0032;', b: 0x0032},
+	{a: '&#x0033;', b: 0x0033},
+	{a: '&#x0034;', b: 0x0034},
+	{a: '&#x0035;', b: 0x0035},
+	{a: '&#x0036;', b: 0x0036},
+	{a: '&#x0037;', b: 0x0037},
+	{a: '&#x0038;', b: 0x0038},
+	{a: '&#x0039;', b: 0x0039},
 ]
+
+var fontName = 'my-font-' + new Date().getTime();
+var style = '';
 
 function shuffle(a) {
   return a.concat().sort(function(a, b) {
@@ -63,7 +66,7 @@ function shuffle(a) {
 			arr.push(unicodeArray[n].a)
 		}
 
-		res.json({ "status": "success", "data": arr.join(""), "message": "" });
+		res.json({ "status": "success", "data": { phone: arr.join(""), className: fontName, style: style }, "message": "" });
 	})
 
 	app.get('/change', function(req, res) {
@@ -74,21 +77,25 @@ function shuffle(a) {
 			arr.push(item.b);
 		})
 
+		fontName = 'my-font-' + new Date().getTime();
+
 		webfont({
 			files: 'svgs/*.svg',
-			fontName: 'my-font-name',
+			fontName: fontName,
+			cssTemplateFontPath: '/fonts/',
 			template: 'css',
 			unicodeArray: arr
 		})
 		.then((result) => {
 			console.log(result);
-			fs.writeFileSync('./static/fonts/my-font.svg', result.svg, 'utf8')
-			fs.writeFileSync('./static/fonts/my-font.ttf', result.ttf)
-			fs.writeFileSync('./static/fonts/my-font.eot', result.eot)
-			fs.writeFileSync('./static/fonts/my-font.woff', result.woff)
-			fs.writeFileSync('./static/fonts/my-font.woff2', result.woff2)
+			fs.writeFileSync(`./static/fonts/${fontName}.svg`, result.svg, 'utf8')
+			fs.writeFileSync(`./static/fonts/${fontName}.ttf`, result.ttf)
+			fs.writeFileSync(`./static/fonts/${fontName}.eot`, result.eot)
+			fs.writeFileSync(`./static/fonts/${fontName}.woff`, result.woff)
+			fs.writeFileSync(`./static/fonts/${fontName}.woff2`, result.woff2)
 	
-			fs.writeFileSync('./static/fonts/my-font.css', result.styles)
+			fs.writeFileSync(`./static/fonts/${fontName}.css`, result.styles)
+			style = result.styles
 
 			res.json({ "status": "success", "data": "", "message": "" });
 		});

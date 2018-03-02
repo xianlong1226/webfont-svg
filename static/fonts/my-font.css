@@ -44,7 +44,7 @@
 }
 
 .my-font-name-0::before {
-    content: "\ea09";
+    content: "\ea04";
 }
 
 .my-font-name-1::before {
@@ -56,27 +56,27 @@
 }
 
 .my-font-name-3::before {
-    content: "\ea06";
+    content: "\ea09";
 }
 
 .my-font-name-4::before {
-    content: "\ea04";
-}
-
-.my-font-name-5::before {
     content: "\ea0b";
 }
 
-.my-font-name-6::before {
-    content: "\ea05";
-}
-
-.my-font-name-7::before {
+.my-font-name-5::before {
     content: "\ea02";
 }
 
-.my-font-name-8::before {
+.my-font-name-6::before {
     content: "\ea03";
+}
+
+.my-font-name-7::before {
+    content: "\ea06";
+}
+
+.my-font-name-8::before {
+    content: "\ea05";
 }
 
 .my-font-name-9::before {
